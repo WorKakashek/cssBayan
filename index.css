@@ -1,0 +1,61 @@
+.accordion {
+    max-width: 800px;
+    margin: 20px auto;
+}
+.accordion:hover .cross{
+    opacity: 1;
+}
+.accordion-item {
+    border-top: 2px solid black;
+    cursor: pointer;
+}
+.accordion-item:last-child{
+    border-bottom: 2px solid black;
+}
+
+.accordio-title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    padding: 15px;
+}
+
+.accordion-btn {
+    appearance: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.accordion-body {
+    display: none;
+    opacity: 0;
+
+}
+
+.accomodation-image {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.cross {
+    max-width: 10px;
+    max-height: 10px;
+    opacity: 0;
+}
+
+/* click */
+.accordion-btn:checked~.accordion-body {
+    transition: opacity 2s linear;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-btn:checked~.accordio-title .cross {
+    transition: transform .3s;
+    transform: rotate(45deg);
+}
